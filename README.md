@@ -35,33 +35,33 @@ nano ~/wireguard/docker-compose.yml
 ```
 version: '3.8'
 services:
-wireguard:
-  container_name: wireguard
-  image: linuxserver/wireguard
-  environment:
-    - PUID=1000
-    - PGID=1000
-    - TZ=America/Chicago
-    - SERVERURL=128.199.15.235
-    - SERVERPORT=51820
-    - PEERS=laptop,phone
-    - PEERDNS=auto
-    - INTERNAL_SUBNET=10.0.0.0
-  ports:
-    - 51820:51820/udp
-  volumes:
-    - type: bind
-      source: ./config/
-      target: /config/
-    - type: bind
-      source: /lib/modules
-      target: /lib/modules
-  restart: always
-  cap_add:
-    - NET_ADMIN
-    - SYS_MODULE
-  sysctls:
-    - net.ipv4.conf.all.src_valid_mark=1
+  wireguard:
+    container_name: wireguard
+    image: linuxserver/wireguard
+    environment:
+      - PUID=1000
+      - PGID=1000
+      - TZ=America/Chicago
+      - SERVERURL=143.244.177.170
+      - SERVERPORT=51820
+      - PEERS=laptop,phone
+      - PEERDNS=auto
+      - INTERNAL_SUBNET=10.0.0.0
+    ports:
+      - 51820:51820/udp
+    volumes:
+      - type: bind
+        source: ./config/
+        target: /config/
+      - type: bind
+        source: /lib/modules
+        target: /lib/modules
+    restart: always
+    cap_add:
+      - NET_ADMIN
+      - SYS_MODULE
+    sysctls:
+      - net.ipv4.conf.all.src_valid_mark=1
 ```
 3. Ctrl + X, Y, Enter
 4. I selected the America/Chicago timezone, inserted my droplet's IP address, and set PEERS to my phone and laptop
