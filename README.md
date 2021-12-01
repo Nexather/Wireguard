@@ -42,7 +42,7 @@ services:
       - PUID=1000
       - PGID=1000
       - TZ=America/Chicago
-      - SERVERURL=143.244.177.170
+      - SERVERURL=143.198.99.44
       - SERVERPORT=51820
       - PEERS=laptop,phone
       - PEERDNS=auto
@@ -74,4 +74,17 @@ docker-compose up -d
 # Connecting devices
 1. Install WireGuard on your phone, and hit the plus button and select scan QR code
 2. Run this command to display a QR code: `docker-compose logs -f wireguard`
-3. 
+3. Navigate to ~/wireguard/config/peer_laptop#
+4. open the peer_laptop.conf and copy the info inside
+5. Install the wireguard PC program
+6. Create empty tunnel, and paste the info into it
+
+# Screenshots
+1. Phone:
+ * Off VPN: ![Screenshot_20211201-145728](https://user-images.githubusercontent.com/27169767/144313200-7fdfab53-6735-4b09-9706-e531c0801cca.png)
+ * On VPN:![Screenshot_20211201-145738](https://user-images.githubusercontent.com/27169767/144313213-b3c268fe-5af5-4d0a-9f79-05b4bb31f367.png)
+
+2. Laptop:
+ * Off VPN:<img width="526" alt="laptopNoVPN" src="https://user-images.githubusercontent.com/27169767/144313091-7f978a23-e45d-4c7f-a246-c8794b2b8ebf.PNG">
+ * On VPN:<img width="508" alt="laptopVPN" src="https://user-images.githubusercontent.com/27169767/144313105-c0549636-9979-4574-8415-b3f6ab4ffd4a.PNG">
+
